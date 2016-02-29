@@ -22,13 +22,11 @@ public class Grafo {
     
     /**
      * Encontra o menor caminho entre dois pontos utilizando o algoritmo de dijkstra
-     * @param init origem da busca
-     * @param finish destino da busca
+     * @param inicio origem da busca
+     * @param fim destino da busca
      */
-    public void dijkstra(int init, int finish) {
-        No inicio = nos.get(init); //Onde começa
+    public void dijkstra(No inicio, No fim) {
         inicio.setCustoMinimo(0);  //O inicio tem custo 0
-        No fim = nos.get(finish);  //Onde queremos chegar
         
         List<No> nosAbertos = new ArrayList<>(); //Lista de nós abertos
         
@@ -58,7 +56,7 @@ public class Grafo {
             }
         }        
         
-        //Controi o menos caminho da origem até o destino
+        //Controi o menor caminho da origem até o destino
         Stack<No> caminhoMinimo = new Stack<>(); //Uma pilha para montar o caminha mínimo do fim para o inicio
         caminhoMinimo.addElement(fim); //Adiciona o fim ao caminho minimo
         

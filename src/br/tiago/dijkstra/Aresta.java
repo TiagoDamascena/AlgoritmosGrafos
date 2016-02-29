@@ -14,7 +14,7 @@ public class Aresta {
         this.destino = destino;
         this.custo = custo;
         
-        colocarArestaNaAdjacentes(this);
+        colocarArestaNaAdjacentes();
     }
 
     public No getOrigem() {
@@ -33,8 +33,8 @@ public class Aresta {
      * Adciona essa aresta a lista de adjacentes da origem e do destino
      * @param aresta aresta a ser adicionada
      */
-    private void colocarArestaNaAdjacentes(Aresta aresta){
-        aresta.getOrigem().addAdjacentes(aresta);
-        aresta.getDestino().addAdjacentes(aresta);
+    private void colocarArestaNaAdjacentes() {
+        this.getOrigem().addAdjacentes(this);
+        this.getDestino().addAdjacentes(this);
     }
 }
