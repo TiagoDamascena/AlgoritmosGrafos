@@ -11,7 +11,7 @@ public class Main {
      * @param args argumentos de execução
      */
     public static void main(String[] args) {
-        Grafo grafo = new Grafo();
+        /*Grafo grafo = new Grafo();
         
         //Cria os nós do grafo
         No no1 = new No("SF");
@@ -33,6 +33,7 @@ public class Main {
         
         //Cria as arestas do nó
         new Aresta(no1, no2, 39);
+        new Aresta(no2, no1, 99);
         new Aresta(no1, no3, 89);
         new Aresta(no1, no4, 120);
         new Aresta(no1, no7, 210);
@@ -48,6 +49,12 @@ public class Main {
         new Aresta(no7, no8, 66);
         
         //Descobre o menor caminho
-        grafo.dijkstra(no1,no8);
+        grafo.dijkstra(no1,no8);*/
+        
+        Grafo grafo = GrafoAleatorio.gerar(3000);
+        No origem = grafo.getNo(0);
+        No destino = grafo. getNo(1567);
+        
+        grafo.dijkstra(origem, destino);
     }
 }
