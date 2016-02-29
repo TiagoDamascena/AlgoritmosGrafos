@@ -11,7 +11,7 @@ import java.util.Stack;
  * @author tiago
  */
 public class Grafo {
-    private List<No> nos = new ArrayList<>(); //Nós desse grafo
+    private final List<No> nos = new ArrayList<>(); //Nós desse grafo
     
     public void addNo(No no) {
         nos.add(no);
@@ -23,14 +23,13 @@ public class Grafo {
     
     /**
      * Realiza uma busca em largura nesse grafo
-     * @param num raiz de onde a busca deve começar
+     * @param raiz raiz de onde a busca deve começar
      */
-    public void buscaEmLargura(int num) {
+    public void buscaEmLargura(No raiz) {
         desmarcarTodos();
         
         Queue<No> descobertos = new LinkedList<>(); //Fila de nós descobertos
         
-        No raiz = nos.get(num);
         raiz.setEstadoAtual(EstadoNo.DESCOBERTO);
         descobertos.add(raiz);
         
@@ -52,14 +51,13 @@ public class Grafo {
     
     /**
      * Realiza uma busca em profundidade nesse grafo
-     * @param num raiz de onde a busca deve começar
+     * @param raiz raiz de onde a busca deve começar
      */
-    public void buscaEmProfundidade(int num) {
+    public void buscaEmProfundidade(No raiz) {
         desmarcarTodos();
         
         Stack<No> descobertos = new Stack<>(); //Pilha de nós descobertos
         
-        No raiz = nos.get(num);
         raiz.setEstadoAtual(EstadoNo.DESCOBERTO);
         descobertos.push(raiz);
         
@@ -90,9 +88,9 @@ public class Grafo {
      * @param a índice do nó origem
      * @param b índice do nó destino
      */
-    public void criarAresta(int a, int b) {
-        this.getNo(a).addAdjacente(this.getNo(b));
-        this.getNo(b).addAdjacente(this.getNo(a));
+    public void criarAresta(No a, No b) {
+        a.addAdjacente(b);
+        b.addAdjacente(a);
     }
     
     /**
