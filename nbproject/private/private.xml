@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/tiago/Documents/NetBeansProjects/AlgoritmoDijkstra/src/br/tiago/dijkstra/EstadoNo.java</file>
-            <file>file:/C:/Users/tiago/Documents/NetBeansProjects/AlgoritmoDijkstra/src/br/tiago/dijkstra/No.java</file>
-            <file>file:/C:/Users/tiago/Documents/NetBeansProjects/AlgoritmoDijkstra/src/br/tiago/dijkstra/Aresta.java</file>
-            <file>file:/C:/Users/tiago/Documents/NetBeansProjects/AlgoritmoDijkstra/src/br/tiago/dijkstra/AlgoritmoDijkstra.java</file>
-            <file>file:/C:/Users/tiago/Documents/NetBeansProjects/AlgoritmoDijkstra/src/br/tiago/dijkstra/Main.java</file>
+            <file>file:/C:/Users/tiago/Documents/Git/AlgoritmosGrafos/src/br/tiago/dijkstra/Grafo.java</file>
+            <file>file:/C:/Users/tiago/Documents/Git/AlgoritmosGrafos/src/br/tiago/dijkstra/GrafoAleatorio.java</file>
+            <file>file:/C:/Users/tiago/Documents/Git/AlgoritmosGrafos/src/br/tiago/dijkstra/Aresta.java</file>
+            <file>file:/C:/Users/tiago/Documents/Git/AlgoritmosGrafos/src/br/tiago/dijkstra/Main.java</file>
+            <file>file:/C:/Users/tiago/Documents/Git/AlgoritmosGrafos/src/br/tiago/dijkstra/No.java</file>
         </group>
     </open-files>
 </project-private>

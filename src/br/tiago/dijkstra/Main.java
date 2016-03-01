@@ -51,9 +51,9 @@ public class Main {
         //Descobre o menor caminho
         grafo.dijkstra(no1,no8);*/
         
-        Grafo grafo = GrafoAleatorio.gerar(3000);
+        Grafo grafo = GrafoAleatorio.gerar(5000, 3, 10, 200);
         No origem = grafo.getNo(0);
-        No destino = grafo. getNo(1567);
+        No destino = grafo. getNo(4512);
         
         grafo.dijkstra(origem, destino);
     }

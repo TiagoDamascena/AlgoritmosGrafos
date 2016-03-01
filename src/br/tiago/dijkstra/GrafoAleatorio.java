@@ -1,5 +1,7 @@
 package br.tiago.dijkstra;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -8,7 +10,7 @@ import java.util.Random;
  */
 public class GrafoAleatorio {
     
-    public static Grafo gerar(int tamanho) {
+    public static Grafo gerar(int tamanho, int maxArestas, int maxDistacia, int maxCusto) {
         Grafo grafo = new Grafo();
         
         No[] nos = new No[tamanho];
@@ -21,12 +23,19 @@ public class GrafoAleatorio {
         
         Random rand = new Random();
         
-        for(i=0; i<tamanho; i++) {
-            int arestas = rand.nextInt(tamanho/3)+tamanho/3;
+        for(i=0; i<tamanho-1; i++) {
+            int arestas = rand.nextInt(maxArestas)+1;
+            if(i+arestas >= tamanho) {
+                arestas = 1;
+            }
+            List sorteados = new ArrayList<>();
             for(int j=0; j<arestas; j++) {
-                int dPos = rand.nextInt(tamanho);
-                int custo = rand.nextInt(190)+10;
-                No node = nos[dPos];
+                int dPos;
+                do {
+                    dPos = rand.nextInt(maxDistacia)+(i+1);
+                } while(sorteados.contains(dPos) || dPos >= tamanho);
+                sorteados.add(dPos);
+                int custo = rand.nextInt(maxCusto-10)+10;
                 new Aresta(nos[i], nos[dPos], custo);
             }
         }

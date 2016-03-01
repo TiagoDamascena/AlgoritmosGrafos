@@ -41,8 +41,11 @@ public class Grafo {
         while(!nosAbertos.isEmpty()) {
             for(Aresta aresta: atual.getAdjacentes()) { //Calcula o custo para todos os nós adjacentes
                 int novoCusto = atual.getCustoMinimo() + aresta.getCusto();
-                
-                if(novoCusto < aresta.getDestino().getCustoMinimo()) {
+                int antigoCusto = aresta.getDestino().getCustoMinimo();
+                if(novoCusto < 0) {
+                    novoCusto = Integer.MAX_VALUE;
+                }
+                if(novoCusto <= antigoCusto) {
                    aresta.getDestino().setCustoMinimo(novoCusto); //Altera o custo mínimo de um nó
                    aresta.getDestino().setAntecessor(atual); //Define o nó antecessor
                 }
@@ -66,12 +69,14 @@ public class Grafo {
                 atual = atual.getAntecessor();
                 caminhoMinimo.addElement(atual);
             }
-
+            int cont = caminhoMinimo.size();
             //Exibe todos os nós na pilha de caminho mínimo
             while(!caminhoMinimo.empty()) {
                 atual = caminhoMinimo.pop();
                 System.out.println("NO:" + atual.getId());
             }
+            
+            System.out.println("\nTAMANHO: "+cont);
         } else {
             System.out.println("Não há caminho até esse Nó");
         }
