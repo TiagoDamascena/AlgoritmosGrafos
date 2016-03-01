@@ -1,5 +1,7 @@
 package br.tiago.dijkstra;
 
+import br.bruno.kruskal.GrafoAleatorioKruskal;
+
 /**
  * Classe principal do programa
  * @author bruno
