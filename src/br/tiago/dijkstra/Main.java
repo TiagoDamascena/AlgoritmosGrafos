@@ -1,7 +1,5 @@
 package br.tiago.dijkstra;
 
-import br.bruno.kruskal.GrafoAleatorioKruskal;
-
 /**
  * Classe principal do programa
  * @author bruno
@@ -12,7 +10,7 @@ public class Main {
      * Monta o grafo e busca o menor caminho entre dois pontos
      * @param args argumentos de execução
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         /*Grafo grafo = new Grafo();
         
         //Cria os nós do grafo
@@ -53,10 +51,9 @@ public class Main {
         //Descobre o menor caminho
         grafo.dijkstra(no1,no8);*/
         
-        Grafo grafo = GrafoAleatorio.gerar(5000, 3, 10, 200);
-        No origem = grafo.getNo(0);
-        No destino = grafo. getNo(4512);
+        Grafo grafoAleatorio = GrafoAleatorio.gerar(5000, 3, 10, 200);
         
-        grafo.dijkstra(origem, destino);
+        grafoAleatorio.dijkstra(0, 4512);
+        grafoAleatorio.dijkstraHeap(0, 4512);
     }
 }

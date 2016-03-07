@@ -11,6 +11,10 @@ import java.util.Random;
 public class GrafoAleatorio {
     
     public static Grafo gerar(int tamanho, int maxArestas, int maxDistacia, int maxCusto) {
+        if(maxArestas > maxDistacia) {
+            maxDistacia = maxArestas;
+        }
+        
         Grafo grafo = new Grafo();
         
         No[] nos = new No[tamanho];
@@ -34,9 +38,10 @@ public class GrafoAleatorio {
                 do {
                     dPos = rand.nextInt(maxDistacia)+(i+1);
                 } while(sorteados.contains(dPos) || dPos >= tamanho);
+                
                 sorteados.add(dPos);
                 int custo = rand.nextInt(maxCusto-10)+10;
-                new Aresta(nos[i], nos[dPos], custo);
+                NovaAresta.criaAresta(nos[i], nos[dPos], custo);
             }
         }
         

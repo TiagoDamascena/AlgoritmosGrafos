@@ -19,7 +19,7 @@ public class No implements Comparable<No> {
     public No(String id) {
         this.id = id;
         
-        custoMinimo = Integer.MAX_VALUE;
+        custoMinimo = Integer.MAX_VALUE-10;
         antecessor = null;
         adjacentes = new ArrayList<>();
         estadoNo = EstadoNo.ABERTO;
